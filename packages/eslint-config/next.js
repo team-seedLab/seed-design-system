@@ -7,6 +7,9 @@ import pluginReact from "eslint-plugin-react";
 import globals from "globals";
 import pluginNext from "@next/eslint-plugin-next";
 import { config as baseConfig } from "./base.js";
+import importPlugin from "eslint-plugin-import";
+import unusedImports from 'eslint-plugin-unused-imports';
+import eslintPluginPrettier from "eslint-plugin-prettier/recommended";
 
 /**
  * A custom ESLint configuration for libraries that use Next.js.
@@ -18,6 +21,8 @@ export const nextJsConfig = [
   js.configs.recommended,
   eslintConfigPrettier,
   ...tseslint.configs.recommended,
+  importPlugin.flatConfigs.recommended,
+  eslintPluginPrettier,
   globalIgnores([
     // Default ignores of eslint-config-next:
     ".next/**",
@@ -37,10 +42,24 @@ export const nextJsConfig = [
   {
     plugins: {
       "@next/next": pluginNext,
+      "unused-imports": unusedImports,
     },
     rules: {
       ...pluginNext.configs.recommended.rules,
       ...pluginNext.configs["core-web-vitals"].rules,
+      "prettier/prettier": "warn",
+      "no-unused-vars": "off",
+      "import/no-unused-modules": "error",
+      "unused-imports/no-unused-imports": "error",
+      "unused-imports/no-unused-vars": [
+        "warn",
+        {
+          vars: "all",
+          varsIgnorePattern: "^_",
+          args: "after-used",
+          argsIgnorePattern: "^_"
+        },
+      ],
     },
   },
   {
