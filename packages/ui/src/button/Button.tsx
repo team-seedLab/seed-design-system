@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
-import { buttonStyle } from "./Button.css";
+import { baseButtonStyle, variantStyles, sizeStyles } from "./Button.css";
 
 export type ButtonProps = {
   appName: string;
@@ -13,17 +13,18 @@ export type ButtonProps = {
 
 export const Button = ({
   children,
-  variant,
+  variant = "primary",
+  size = "medium",
   className,
   appName,
-  size,
 }: ButtonProps) => {
+  const combinedClassName =
+    `${baseButtonStyle} ${variantStyles[variant]} ${sizeStyles[size]} ${className || ""}`.trim();
+
   return (
     <button
-      className={buttonStyle}
+      className={combinedClassName}
       onClick={() => alert(`Hello from your ${appName} app!`)}
-      size={size}
-      variant={variant}
     >
       {children}
     </button>
