@@ -1,0 +1,47 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Environment
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Testing
+coverage
+
+# Turbo
+.turbo
+turbo.json
+
+# Vercel
+.vercel
+
+# Build Outputs
+.next/
+out/
+build
+dist
+storybook-static
+
+# Build artifacts
+*.tsbuildinfo
+
+# Lock files (optional - usually ignored by default)
+pnpm-lock.yaml
+yarn.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+.eslintcache
