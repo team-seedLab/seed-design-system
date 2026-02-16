@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "type": "module",
   "private": true,
+  "prettier": "@repo/prettier-config",
   "exports": {
     "./base": "./base.js",
     "./next-js": "./next.js",
@@ -11,8 +12,10 @@
   "devDependencies": {
     "@eslint/js": "^9.39.1",
     "@next/eslint-plugin-next": "^15.5.0",
+    "@repo/prettier-config": "workspace:^",
     "eslint": "^9.39.1",
-    "eslint-config-prettier": "^10.1.1",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-only-warn": "^1.1.0",
     "eslint-plugin-prettier": "^5.5.5",

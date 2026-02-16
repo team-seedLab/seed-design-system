@@ -15,7 +15,15 @@ import tseslint from 'typescript-eslint';
 export const config = [
   js.configs.recommended,
   ...tseslint.configs.recommended,
-  importPlugin.flatConfigs.recommended,
+  {
+    ...importPlugin.flatConfigs.recommended,
+    settings: {
+      'import/resolver': {
+        typescript: true,
+        node: true,
+      },
+    },
+  },
   eslintConfigPrettier,
   eslintPluginPrettier,
   {

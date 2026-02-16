@@ -14,7 +14,8 @@
       "outputs": [
         ".next/**",
         "!.next/cache/**",
-        "storybook-static/**"
+        "storybook-static/**",
+        "dist/**"
       ]
     },
     "build:storybook": {
@@ -29,6 +30,11 @@
     "check-types": {
       "dependsOn": [
         "^check-types"
+      ],
+      "inputs": [
+        "src/**/*.{ts,tsx}",
+        "*.config.{js,ts}",
+        "tsconfig.json"
       ]
     },
     "dev": {
