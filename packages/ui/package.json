@@ -9,7 +9,7 @@
     }
   },
   "imports": {
-    "#*": "./src/*"
+    "@/*": "./src/*"
   },
   "scripts": {
     "dev": "tsc --watch",
@@ -20,11 +20,14 @@
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
+    "@repo/theme": "workspace:^",
     "@repo/typescript-config": "workspace:*",
     "@storybook/react": "^10.2.8",
     "@types/node": "^22.15.3",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
+    "@vanilla-extract/css": "^1.18.0",
+    "@vanilla-extract/vite-plugin": "^5.1.4",
     "eslint": "^9.39.1",
     "typescript": "5.9.2"
   },
