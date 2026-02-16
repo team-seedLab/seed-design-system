@@ -1,11 +1,11 @@
-import js from "@eslint/js";
-import eslintConfigPrettier from "eslint-config-prettier";
-import turboPlugin from "eslint-plugin-turbo";
-import tseslint from "typescript-eslint";
-import onlyWarn from "eslint-plugin-only-warn";
-import importPlugin from "eslint-plugin-import";
+import js from '@eslint/js';
+import eslintConfigPrettier from 'eslint-config-prettier';
+import importPlugin from 'eslint-plugin-import';
+import onlyWarn from 'eslint-plugin-only-warn';
+import eslintPluginPrettier from 'eslint-plugin-prettier/recommended';
+import turboPlugin from 'eslint-plugin-turbo';
 import unusedImports from 'eslint-plugin-unused-imports';
-import eslintPluginPrettier from "eslint-plugin-prettier/recommended";
+import tseslint from 'typescript-eslint';
 
 /**
  * A shared ESLint configuration for the repository.
@@ -14,9 +14,9 @@ import eslintPluginPrettier from "eslint-plugin-prettier/recommended";
  * */
 export const config = [
   js.configs.recommended,
-  eslintConfigPrettier,
   ...tseslint.configs.recommended,
   importPlugin.flatConfigs.recommended,
+  eslintConfigPrettier,
   eslintPluginPrettier,
   {
     plugins: {
@@ -24,18 +24,18 @@ export const config = [
       'unused-imports': unusedImports,
     },
     rules: {
-      "turbo/no-undeclared-env-vars": "warn",
-      "prettier/prettier": "warn",
-      "no-unused-vars": "off",
-      "import/no-unused-modules": "error",
-      "unused-imports/no-unused-imports": "error",
-      "unused-imports/no-unused-vars": [
-        "warn",
+      'turbo/no-undeclared-env-vars': 'warn',
+      'prettier/prettier': 'warn',
+      'no-unused-vars': 'off',
+      'import/no-unused-modules': 'error',
+      'unused-imports/no-unused-imports': 'error',
+      'unused-imports/no-unused-vars': [
+        'warn',
         {
-          vars: "all",
-          varsIgnorePattern: "^_",
-          args: "after-used",
-          argsIgnorePattern: "^_"
+          vars: 'all',
+          varsIgnorePattern: '^_',
+          args: 'after-used',
+          argsIgnorePattern: '^_',
         },
       ],
     },
@@ -46,6 +46,6 @@ export const config = [
     },
   },
   {
-    ignores: ["dist/**"],
+    ignores: ['dist/**'],
   },
 ];
