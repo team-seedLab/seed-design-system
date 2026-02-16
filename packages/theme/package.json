@@ -1,0 +1,13 @@
+{
+  "name": "@repo/theme",
+  "version": "1.0.0",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "packageManager": "pnpm@10.7.1",
+  "dependencies": {
+    "@vanilla-extract/css": "^1.18.0"
+  }
+}
