@@ -4,8 +4,8 @@
   "private": true,
   "exports": {
     "./*": {
-      "types": "./src/*.tsx",
-      "default": "./dist/*.jsx"
+      "types": "./src/*.ts",
+      "default": "./dist/*.js"
     }
   },
   "imports": {
